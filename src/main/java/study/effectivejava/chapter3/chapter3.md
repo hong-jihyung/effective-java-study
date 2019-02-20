@@ -1,0 +1,4 @@
+- Object 에서 final 이 아닌 메서드 (equals, hashcode, tostring, clone, finalize)는 모두 overriding 을 염두에 두고 설계됨
+- 재정의시 지켜야 할 일반 규약이 명확함
+- 잘못 구현하면, 그 규약을 지킬거라 가정하고 만들어진 클래스(hashmap, hashset 등)에서 오동작
+- 엉성하게 할 바엔 그냥 하지 마라 ㅋ

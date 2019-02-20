@@ -1,0 +1,43 @@
+group 'study.effectivejava'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildscript {
+    ext {
+        springBootVersion = "1.5.9.RELEASE"
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven { url "http://repo.spring.io/libs-snapshot" }
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-devtools"
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "com.google.code.gson:gson:2.8.2"
+    compile "org.apache.commons:commons-lang3:3.7"
+    compile group: 'com.google.guava', name: 'guava', version: '23.6-jre'
+
+    compileOnly "org.projectlombok:lombok"
+
+//    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'junit:junit:4.12'
+}
